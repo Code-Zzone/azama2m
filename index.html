@@ -1,1 +1,690 @@
-<h1>Hello Megoo</h1>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>رواد التشطيبات | تشطيبات وديكورات احترافية</title>
+    <!-- Font Awesome 6 (Free CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Tajawal (حديثة وجذابة بالعربية) -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #F8FAFE;
+            color: #1E2A3E;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scroll */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #E9ECF3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C1A55B;
+            border-radius: 10px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(6px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #EFF2F9;
+        }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1E2A3E, #B88A44);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #B88A44;
+            display: block;
+            line-height: 1.2;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #2C3E50;
+            transition: 0.2s;
+            font-size: 1.05rem;
+        }
+        .nav-links a:hover {
+            color: #C29B4A;
+        }
+        /* mobile menu btn */
+        .mobile-menu {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #1E2A3E;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(107deg, #FFFFFF 25%, #F3EFE6 100%);
+            padding: 70px 0 80px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+        .hero-badge {
+            background: #EBDCB8;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #7A5C2E;
+            margin-bottom: 20px;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #1F2A3E;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #4A5B6E;
+            margin-bottom: 32px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #B88A44;
+            border: none;
+            padding: 14px 34px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 8px 18px rgba(184,138,68,0.25);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary:hover {
+            background: #9E6F32;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #B88A44;
+            padding: 12px 32px;
+            border-radius: 60px;
+            font-weight: 700;
+            color: #B88A44;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: #B88A4410;
+            transform: translateY(-2px);
+        }
+        .hero-image {
+            flex: 1;
+            min-width: 280px;
+        }
+        .hero-image img {
+            width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            position: relative;
+        }
+        .section-sub {
+            text-align: center;
+            color: #5F6F82;
+            max-width: 650px;
+            margin: 0 auto 55px;
+            font-size: 1.1rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+        .service-card {
+            background: white;
+            padding: 34px 24px;
+            border-radius: 32px;
+            box-shadow: 0 12px 28px -8px rgba(0,0,0,0.05);
+            transition: all 0.25s ease;
+            text-align: center;
+            border: 1px solid #F0F2F8;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 28px 38px -12px rgba(0,0,0,0.12);
+            border-color: #E9DBC2;
+        }
+        .service-icon {
+            font-size: 3rem;
+            background: #FEF5E8;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            border-radius: 30px;
+            color: #B88A44;
+        }
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .service-card p {
+            color: #4C5B6B;
+        }
+
+        /* Why choose us */
+        .whyus {
+            background: #1E2A3E;
+            color: white;
+            border-radius: 48px;
+            margin: 20px 0 40px;
+            padding: 60px 40px;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+            text-align: center;
+        }
+        .why-item i {
+            font-size: 2.4rem;
+            background: #B88A44;
+            padding: 16px;
+            border-radius: 60px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .why-item h4 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+        .gallery-item {
+            background: #fff;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+            transition: 0.2s;
+            height: 260px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Testimonials */
+        .testimonial-slider {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .testimonial {
+            background: white;
+            padding: 32px;
+            border-radius: 32px;
+            flex: 1;
+            min-width: 260px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #EDF0F5;
+        }
+        .stars {
+            color: #F5B041;
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+        }
+        .testimonial p {
+            font-style: normal;
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .client-name {
+            font-weight: 800;
+            color: #B88A44;
+        }
+
+        /* Contact Form */
+        .contact-wrapper {
+            background: white;
+            border-radius: 48px;
+            padding: 40px;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-info i {
+            margin-left: 12px;
+            color: #B88A44;
+            width: 30px;
+        }
+        .contact-info p {
+            margin: 20px 0;
+            font-size: 1.05rem;
+        }
+        .contact-form {
+            flex: 1;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 42px;
+            border: 1px solid #E2E7F0;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            background: #FCFDFF;
+            transition: 0.2s;
+        }
+        textarea {
+            border-radius: 28px;
+            resize: vertical;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #B88A44;
+            box-shadow: 0 0 0 3px rgba(184,138,68,0.1);
+        }
+        .btn-submit {
+            background: #1E2A3E;
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 60px;
+            font-weight: bold;
+            width: 100%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-submit:hover {
+            background: #B88A44;
+        }
+        footer {
+            background: #0F1722;
+            color: #AAB3C2;
+            padding: 40px 0 20px;
+            text-align: center;
+            border-radius: 40px 40px 0 0;
+            margin-top: 50px;
+        }
+        .social-icons a {
+            color: #C7B28B;
+            margin: 0 12px;
+            font-size: 1.5rem;
+            transition: 0.2s;
+            display: inline-block;
+        }
+        .social-icons a:hover {
+            color: white;
+        }
+
+        @media (max-width: 850px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: white;
+                position: absolute;
+                top: 75px;
+                right: 20px;
+                left: 20px;
+                padding: 30px;
+                border-radius: 28px;
+                box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+                text-align: center;
+                gap: 20px;
+                z-index: 999;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 1.9rem;
+            }
+            .whyus {
+                padding: 40px 20px;
+            }
+        }
+        @media (max-width: 550px) {
+            .container {
+                padding: 0 20px;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .hero-content {
+                text-align: center;
+            }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo">
+            <h1>رواد التشطيبات</h1>
+            <span>دقة · إتقان · إبداع</span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#gallery">أعمالنا</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+        <div class="mobile-menu" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Section (home) -->
+<section id="home">
+    <div class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-hard-hat"></i> خبرة أكثر من 12 عاماً</div>
+                <h1>تشطيبات فاخرة<br>تحول مساحتك إلى تحفة فنية</h1>
+                <p>نقدم حلول شاملة للتشطيبات والديكورات الداخلية والخارجية بأعلى معايير الجودة. فريق متخصص، مواد عالية الجودة، وإشراف هندسي دقيق.</p>
+                <div class="btn-group">
+                    <button class="btn-primary" onclick="scrollToContact()"><i class="fas fa-headset"></i> اطلب عرض سعر</button>
+                    <button class="btn-outline" onclick="scrollToGallery()"><i class="fas fa-images"></i> معرض الأعمال</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- صورة حديثة توضيحية (نستخدم placeholder من خدمة مجانية مع صورة تشطيبات أنيقة) -->
+                <img src="https://placehold.co/600x450/F3EFE6/B88A44?text=تشطيبات+راقية&font=playfair" alt="تشطيبات داخلية فاخرة" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+    <div class="container section">
+        <div class="section-title">خدمات التشطيب والديكور</div>
+        <div class="section-sub">نقدم كافة أعمال التشطيبات للمنازل والفلل والمكاتب والمحلات التجارية بجودة احترافية</div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
+                <h3>دهانات وبياض</h3>
+                <p>محارة، معجون، دهانات داخلية وخارجية بأحدث الألوان والمواد العازلة.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-tile"></i></div>
+                <h3>سيراميك ورخام</h3>
+                <p>تركيب سيراميك، بورسلين، رخام طبيعي وصناعي بأعلى دقة وتشطيب متميز.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-plug"></i></div>
+                <h3>كهرباء وسباكة</h3>
+                <p>تمديدات كهربائية وسباكة وفق المعايير العالمية مع ضمان شامل.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-door-open"></i></div>
+                <h3>أبواب ونجارة</h3>
+                <p>أبواب خشب، مطابخ، أرفف كلادينج وديكورات خشبية فاخرة.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why choose us -->
+<div class="container">
+    <div class="whyus">
+        <div class="section-title" style="color:white;">لماذا تختار رواد التشطيبات؟</div>
+        <div class="section-sub" style="color:#D9D2BD;">نحن نضمن رضاك التام من أول يوم عمل وحتى التسليم النهائي.</div>
+        <div class="why-grid">
+            <div class="why-item"><i class="fas fa-medal"></i><h4>جودة فائقة</h4><p>أفضل المواد و الخامات وأحدث التقنيات</p></div>
+            <div class="why-item"><i class="fas fa-clock"></i><h4>التزام بالوقت</h4><p>تسليم المشاريع في المواعيد المحددة مسبقاً</p></div>
+            <div class="why-item"><i class="fas fa-hand-sparkles"></i><h4>ضمان شامل</h4><p>ضمان على جميع التشطيبات لمدة 5 سنوات</p></div>
+            <div class="why-item"><i class="fas fa-chart-line"></i><h4>أسعار تنافسية</h4><p>احصل على أفضل خدمة بأقل التكاليف</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- Gallery Section تشطيبات -->
+<section id="gallery">
+    <div class="container section">
+        <div class="section-title">معرض أعمالنا</div>
+        <div class="section-sub">تشطيبات أنجزناها بكل احترافية – صور حقيقية لبعض مشاريعنا</div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://placehold.co/500x350/EADEC9/6F4F2E?text=غرفة+معيشة+فاخرة&font=cairo" alt="غرفة معيشة تشطيب فاخر"></div>
+            <div class="gallery-item"><img src="https://placehold.co/500x350/DCCCB0/7A5B37?text=مطبخ+حديث+تشطيبات&font=cairo" alt="مطبخ تشطيبات خشب"></div>
+            <div class="gallery-item"><img src="https://placehold.co/500x350/C6B28B/4E3B24?text=حمام+رخام+أنيق&font=cairo" alt="حمام فاخر رخام"></div>
+            <div class="gallery-item"><img src="https://placehold.co/500x350/F1E7D5/B2823C?text=واجهة+كلادينج&font=cairo" alt="واجهات حديثة"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<div class="container" style="margin-bottom: 20px;">
+    <div class="section-title">آراء عملائنا</div>
+    <div class="section-sub">ما يقوله العملاء عن مستوى خدمات التشطيبات لدينا</div>
+    <div class="testimonial-slider">
+        <div class="testimonial"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>“تعامل محترف وجودة تنافس أي شركة كبرى. شغل التشطيبات كان أنيق ودقيق، أنصح بهم بشدة.”</p><div class="client-name">- أحمد م. (عميل فيلا)</div></div>
+        <div class="testimonial"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>“التزام بالمواعيد ومواد عالية الجودة. السعر كان مناسب جداً مقارنة بالخدمة المقدمة. شكراً لفريق التشطيبات.”</p><div class="client-name">- نورة س. (شقة سكنية)</div></div>
+        <div class="testimonial"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>“صمموا لنا ديكورات جبس وإضاءة بشكل راقي. أنصح بالتعامل معهم لأعمال التشطيبات كاملة.”</p><div class="client-name">- فهد الرشيد (محل تجاري)</div></div>
+    </div>
+</div>
+
+<!-- Contact section -->
+<section id="contact">
+    <div class="container section">
+        <div class="section-title">تواصل معنا الآن</div>
+        <div class="section-sub">احصل على استشارة مجانية وعرض سعر دقيق لمشروعك</div>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3 style="margin-bottom: 20px;">معلومات التواصل</h3>
+                <p><i class="fas fa-phone-alt"></i> +966 55 123 4567</p>
+                <p><i class="fab fa-whatsapp"></i> +966 55 123 4567 (واتساب)</p>
+                <p><i class="fas fa-envelope"></i> info@rowad-alfinishing.com</p>
+                <p><i class="fas fa-location-dot"></i> الرياض - شارع التحلية، المملكة العربية السعودية</p>
+                <div style="margin: 25px 0;">
+                    <h4 style="margin-bottom: 12px;">ساعات العمل</h4>
+                    <p>السبت - الخميس: 9 ص – 8 م</p>
+                    <p>الجمعة: مغلق (الرد على الاستفسارات أونلاين)</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="leadForm">
+                    <div class="form-group"><input type="text" placeholder="الاسم الكامل" id="fullName" required></div>
+                    <div class="form-group"><input type="tel" placeholder="رقم الجوال" id="phone" required></div>
+                    <div class="form-group"><input type="email" placeholder="البريد الإلكتروني" id="email"></div>
+                    <div class="form-group"><textarea rows="3" placeholder="نوع الخدمة المطلوبة (مثال: تشطيب شقة، ديكور داخلي..)" id="message" required></textarea></div>
+                    <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> إرسال الطلب</button>
+                    <p style="font-size: 0.8rem; margin-top: 12px; text-align: center;">سيتواصل معك مندوبنا في أقرب وقت</p>
+                </form>
+                <div id="formStatus" style="margin-top: 12px; font-weight:500; text-align:center;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p style="margin: 24px 0 12px;">© 2025 رواد التشطيبات – خبرة وجودة في عالم التشطيبات والديكورات. جميع الحقوق محفوظة.</p>
+        <p style="font-size: 0.85rem;">تصميم احترافي وسريع الاستجابة | تشطيبات داخلية وخارجية بمعايير فائقة</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if(mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Scroll functions
+    function scrollToContact() {
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+    function scrollToGallery() {
+        document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+    }
+    window.scrollToContact = scrollToContact;
+    window.scrollToGallery = scrollToGallery;
+
+    // simple form handling (demo) + validation + success message
+    const form = document.getElementById('leadForm');
+    const statusDiv = document.getElementById('formStatus');
+    if(form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const msg = document.getElementById('message').value.trim();
+            if(!name || !phone || !msg) {
+                statusDiv.innerHTML = '<span style="color:#c23b22;">⚠️ الرجاء تعبئة الاسم، الجوال، والرسالة.</span>';
+                return;
+            }
+            // simulate submission success
+            statusDiv.innerHTML = '<span style="color:#2C7A47;">✅ تم استلام طلبك! سيتواصل معك فريق التشطيبات خلال 24 ساعة.</span>';
+            form.reset();
+            setTimeout(() => {
+                statusDiv.innerHTML = '';
+            }, 5000);
+        });
+    }
+
+    // Plus to ensure navbar sticky does not overlap sections when clicking hash links (simple)
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if(targetId && targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetElem = document.querySelector(targetId);
+                if(targetElem) {
+                    const offset = 80;
+                    const elementPos = targetElem.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({ top: elementPos - offset, behavior: 'smooth' });
+                }
+            }
+        });
+    });
+    // For hero buttons same
+    const btns = document.querySelectorAll('.btn-primary, .btn-outline');
+    btns.forEach(btn => {
+        if(btn.innerText.includes('طلب عرض سعر')) {
+            btn.addEventListener('click', scrollToContact);
+        }
+        if(btn.innerText.includes('معرض الأعمال')) {
+            btn.addEventListener('click', scrollToGallery);
+        }
+    });
+</script>
+</body>
+</html>
